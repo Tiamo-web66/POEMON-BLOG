@@ -3,8 +3,13 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+ENV npm_config_audit=false \
+    npm_config_fund=false \
+    npm_config_registry=https://registry.npmmirror.com
+
 COPY package*.json ./
-RUN npm ci
+RUN npm install --include=dev --ignore-scripts || true
+RUN npm install -D vite@^5.0.0 @vitejs/plugin-vue@^5.0.0 typescript@^5.9.3 vue-tsc@^3.2.4 rollup-plugin-visualizer@^6.0.5 unplugin-auto-import@^0.17.0 unplugin-vue-components@^0.25.0 --ignore-scripts
 
 COPY . .
 
@@ -25,4 +30,3 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
-
