@@ -406,7 +406,7 @@ const getArticle = async (): Promise<void> => {
     if (article.value.id) {
       getColorFromImage(article.value.articleCover || "");
       getNews();
-      const md = new MarkdownIt({ breaks: true });
+      const md = new MarkdownIt({ breaks: true, html: true });
       articleContentHtml.value = md.render(article.value.articleContent || "");
       nextTick(() => {
         highlight();
