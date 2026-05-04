@@ -1,5 +1,5 @@
 # ========== Stage 1: Build Vue app ==========
-FROM node:20-alpine AS builder
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
@@ -7,9 +7,10 @@ ENV npm_config_audit=false \
     npm_config_fund=false \
     npm_config_registry=https://registry.npmmirror.com
 
+RUN npm install -g npm@8.19.4
+
 COPY package*.json ./
-RUN npm install --include=dev --ignore-scripts || true
-RUN npm install -D vite@^5.0.0 @vitejs/plugin-vue@^5.0.0 typescript@^5.9.3 vue-tsc@^3.2.4 rollup-plugin-visualizer@^6.0.5 unplugin-auto-import@^0.17.0 unplugin-vue-components@^0.25.0 --ignore-scripts
+RUN npm ci --include=dev --ignore-scripts
 
 COPY . .
 
