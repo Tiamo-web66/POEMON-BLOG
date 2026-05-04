@@ -1,5 +1,5 @@
 -- ============================================================
--- POEMON-BLOG 数据库初始化脚本
+-- TiAmo-BLOG 数据库初始化脚本
 -- 数据库: myblog | 编码: utf8mb4
 -- ============================================================
 -- 使用方法:
@@ -353,4 +353,4 @@ VALUES ('My Blog', '欢迎来到我的博客', '欢迎访问！这是一个基�
 
 -- 示例文章
 INSERT INTO `article` (`user_id`, `sort_id`, `label_id`, `article_title`, `article_content`, `summary`, `view_count`, `like_count`, `view_status`, `recommend_status`, `comment_status`, `create_time`, `update_time`, `deleted`)
-VALUES (1, 1, 1, '你好，世界！', '# 欢迎使用 POEMON-BLOG\n\n这是你的第一篇文章，你可以在后台管理面板中编辑或删除它。\n\n## 功能特性\n\n- Markdown 编辑器\n- 代码高亮\n- 评论系统\n- 分类标签\n- 主题切换\n\n开始写作吧！', '这是博客的第一篇示例文章，展示基本的 Markdown 功能。', 0, 0, 1, 1, 1, NOW(), NOW(), 0);
+VALUES (1, 1, 1, '你好，世界！', '# 欢迎使用 TiAmo-BLOG\n\n这是你的第一篇文章，你可以在后台管理面板中编辑或删除它。\n\n## 功能特性\n\n- Markdown 编辑器\n- 代码高亮\n- 评论系统\n- 分类标签\n- 主题切换\n\n开始写作吧！', '这是博客的第一篇示例文章，展示基本的 Markdown 功能。', 0, 0, 1, 1, 1, NOW(), NOW(), 0);

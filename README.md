@@ -1,14 +1,14 @@
 <div align="center">
 
-# POEMON-BLOG
+# TiAmo-BLOG
 
 **Vue 3 + Go 全栈个人博客系统**
 
 一个功能丰富、界面美观的现代化博客，前后端分离，开箱即用。
 
-[![Stars](https://img.shields.io/github/stars/monkey-papa/POEMON-BLOG?style=flat-square&logo=github)](https://github.com/monkey-papa/POEMON-BLOG/stargazers)
-[![Forks](https://img.shields.io/github/forks/monkey-papa/POEMON-BLOG?style=flat-square&logo=github)](https://github.com/monkey-papa/POEMON-BLOG/network/members)
-[![License](https://img.shields.io/github/license/monkey-papa/POEMON-BLOG?style=flat-square)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/monkey-papa/TiAmo-BLOG?style=flat-square&logo=github)](https://github.com/monkey-papa/TiAmo-BLOG/stargazers)
+[![Forks](https://img.shields.io/github/forks/monkey-papa/TiAmo-BLOG?style=flat-square&logo=github)](https://github.com/monkey-papa/TiAmo-BLOG/network/members)
+[![License](https://img.shields.io/github/license/monkey-papa/TiAmo-BLOG?style=flat-square)](LICENSE)
 [![Vue](https://img.shields.io/badge/Vue-3.x-4FC08D?style=flat-square&logo=vue.js)](https://vuejs.org/)
 [![Go](https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square&logo=go)](https://go.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
@@ -37,7 +37,7 @@
 | 版本            | 技术栈                  | 分支/链接                                                           |
 | --------------- | ----------------------- | ------------------------------------------------------------------- |
 | **v3.0** (当前) | Vue 3 + Go (Gin)        | `Vue3-Go` 分支                                                      |
-| v2.0            | Vue 3 + Python (Django) | [POEMON-BLOG-v2.0](https://github.com/monkey-papa/POEMON-BLOG-v2.0) |
+| v2.0            | Vue 3 + Python (Django) | [TiAmo-BLOG-v2.0](https://github.com/monkey-papa/TiAmo-BLOG-v2.0) |
 | v1.0            | Vue 2 + Python (Django) | `main` 分支                                                         |
 
 ## 技术栈
@@ -101,7 +101,7 @@
 ## 项目结构
 
 ```
-POEMON-BLOG/
+TiAmo-BLOG/
 ├── My-Blog-Vue3/          # 前端项目
 │   ├── src/
 │   │   ├── views/         # 页面组件
@@ -140,8 +140,8 @@ POEMON-BLOG/
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/monkey-papa/POEMON-BLOG.git
-cd POEMON-BLOG
+git clone https://github.com/monkey-papa/TiAmo-BLOG.git
+cd TiAmo-BLOG
 git checkout Vue3-Go
 ```
 
@@ -358,14 +358,14 @@ server {
 ```bash
 cd My-Blog-Go
 
-docker build -t poemon-blog-backend .
+docker build -t tiamo-blog-backend .
 
 docker run -d \
   --name blog-backend \
   --env-file .env \
   -p 8000:8000 \
   --restart unless-stopped \
-  poemon-blog-backend
+  tiamo-blog-backend
 ```
 
 前端构建后作为静态文件由 Nginx 提供服务。
@@ -403,7 +403,7 @@ cd My-Blog-Go && air               # 热重载
 
 ## Star 趋势
 
-[![Star History Chart](https://api.star-history.com/svg?repos=monkey-papa/POEMON-BLOG&type=Date)](https://star-history.com/#monkey-papa/POEMON-BLOG&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=monkey-papa/TiAmo-BLOG&type=Date)](https://star-history.com/#monkey-papa/TiAmo-BLOG&Date)
 
 ## 许可证
 
@@ -414,7 +414,7 @@ cd My-Blog-Go && air               # 热重载
 如果这个项目对你有帮助，请点一个 **Star** 支持一下！
 
 <div align="center">
-<a href="https://github.com/monkey-papa/POEMON-BLOG/stargazers">
-<img src="https://img.shields.io/github/stars/monkey-papa/POEMON-BLOG?style=social" alt="Star this repo">
+<a href="https://github.com/monkey-papa/TiAmo-BLOG/stargazers">
+<img src="https://img.shields.io/github/stars/monkey-papa/TiAmo-BLOG?style=social" alt="Star this repo">
 </a>
 </div>

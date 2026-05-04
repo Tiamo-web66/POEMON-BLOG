@@ -1,4 +1,4 @@
-# POEMON Blog API 接口文档
+# TiAmo Blog API 接口文档
 
 ## 概述
 
@@ -472,7 +472,7 @@
   "data": [
     {
       "id": 1,
-      "webName": "POEMON Blog",
+      "webName": "TiAmo Blog",
       "webTitle": "个人博客",
       "notices": "公告内容",
       "footer": "页脚内容",

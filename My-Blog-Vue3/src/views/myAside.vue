@@ -37,7 +37,7 @@
         >
           <i class="iconfont icon-wf_Bzhan myCenter"></i>
         </a>
-        <a href="https://github.com/your-username/POEMON-BLOG" target="_blank">
+        <a href="https://github.com/your-username/TiAmo-BLOG" target="_blank">
           <i class="iconfont icon-github myCenter"></i>
         </a>
         <a :href="$constant.siteURL">

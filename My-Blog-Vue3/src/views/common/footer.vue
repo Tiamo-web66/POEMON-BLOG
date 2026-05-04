@@ -49,7 +49,7 @@
           class="icon_link myCenter"
           target="_blank"
           rel="noopener"
-          href="https://github.com/your-username/POEMON-BLOG"
+          href="https://github.com/your-username/TiAmo-BLOG"
           title="Github主页"
         >
           <i class="iconfont icon-github"></i>

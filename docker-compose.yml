@@ -1,17 +1,17 @@
 services:
   mysql:
     image: mysql:8.0
-    container_name: poemon-blog-mysql
+    container_name: tiamo-blog-mysql
     restart: unless-stopped
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
       - --default-time-zone=+08:00
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-poemon_root_password}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-tiamo_root_password}
       MYSQL_DATABASE: ${DB_NAME:-myblog}
       MYSQL_USER: ${MYSQL_APP_USER:-blog}
-      MYSQL_PASSWORD: ${MYSQL_APP_PASSWORD:-poemon_blog_password}
+      MYSQL_PASSWORD: ${MYSQL_APP_PASSWORD:-tiamo_blog_password}
       TZ: ${TZ:-Asia/Shanghai}
     volumes:
       - mysql_data:/var/lib/mysql
@@ -24,20 +24,19 @@ services:
       retries: 10
       start_period: 30s
     networks:
-      - poemon_blog
+      - tiamo_blog
 
   backend:
-    build:
-      context: ./My-Blog-Go
-    container_name: poemon-blog-backend
+    image: ${BACKEND_IMAGE:-ghcr.io/tiamo-web66/tiamo-blog-backend:latest}
+    container_name: tiamo-blog-backend
     restart: unless-stopped
     environment:
       DB_HOST: mysql
       DB_PORT: 3306
       DB_USER: ${MYSQL_APP_USER:-blog}
-      DB_PASSWORD: ${MYSQL_APP_PASSWORD:-poemon_blog_password}
+      DB_PASSWORD: ${MYSQL_APP_PASSWORD:-tiamo_blog_password}
       DB_NAME: ${DB_NAME:-myblog}
-      JWT_SECRET: ${JWT_SECRET:-poemon_docker_change_me}
+      JWT_SECRET: ${JWT_SECRET:-tiamo_docker_change_me}
       EMAIL_FROM: ${EMAIL_FROM:-}
       EMAIL_PASSWORD: ${EMAIL_PASSWORD:-}
       EMAIL_SMTP_HOST: ${EMAIL_SMTP_HOST:-smtp.qq.com}
@@ -45,7 +44,7 @@ services:
       AI_API_KEY: ${AI_API_KEY:-}
       AI_API_URL: ${AI_API_URL:-https://api.deepseek.com/v1}
       AI_MODEL: ${AI_MODEL:-deepseek-chat}
-      SITE_NAME: ${SITE_NAME:-My-Blog}
+      SITE_NAME: ${SITE_NAME:-TiAmo-Blog}
       SITE_URL: ${SITE_URL:-http://localhost}
       BOSS_WECHAT: ${BOSS_WECHAT:-}
       EMAIL_HEADER_IMAGE: ${EMAIL_HEADER_IMAGE:-}
@@ -76,16 +75,11 @@ services:
       retries: 10
       start_period: 20s
     networks:
-      - poemon_blog
+      - tiamo_blog
 
   frontend:
-    build:
-      context: ./My-Blog-Vue3
-      args:
-        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-/api}
-        VITE_WEB_URL: ${VITE_WEB_URL:-http://localhost}
-        VITE_SITE_URL: ${VITE_SITE_URL:-http://localhost}
-    container_name: poemon-blog-frontend
+    image: ${FRONTEND_IMAGE:-ghcr.io/tiamo-web66/tiamo-blog-frontend:latest}
+    container_name: tiamo-blog-frontend
     restart: unless-stopped
     ports:
       - "${FRONTEND_PORT:-80}:80"
@@ -93,11 +87,11 @@ services:
       backend:
         condition: service_healthy
     networks:
-      - poemon_blog
+      - tiamo_blog
 
 volumes:
   mysql_data:
 
 networks:
-  poemon_blog:
+  tiamo_blog:
     driver: bridge
